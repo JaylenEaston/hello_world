@@ -1,0 +1,45 @@
+Here is the code you guys asked me to write. I wrote it in NetBeans, its a free software for java code compilation and management. 
+I had problems exporting the code into a jar.file because I could not find my "project dist folder". 
+So I have uploaded the raw code syntax without the packaging extremities. You should be able to copy the code into any compiler to run it. 
+/**
+ *
+ * @author Jaylen Easton
+ */
+/*
+ * Create memory to store an integer (check)
+ * write function to check if number is prime  (check)
+ * return true or false (check)
+ * Tell user to input an integer number (check)
+ * pass integer number to the function (check)
+ * tell user thank you (check)
+ */
+
+import java.util.Scanner;
+
+public class primenumber 
+{
+
+    public static void main(String [] args) 
+    {
+        /* get input : an integer,  from the user*/
+        Scanner input = new Scanner(System.in);
+        /*Tell user to enter an integer number */
+        System.out.println("Enter an integer number please, and I will tell you if it is prime; But"
+                + " if you enter a charchter or a word instead, I will return an mismatch error message. Thank You. ");
+        /*allocate memory space and var for ramdom ineger*/
+        int random = input.nextInt();
+        /* check random integer */      
+        boolean isValid = check( random );
+        /* display results */
+        if(isValid)
+            System.out.println("True, that was a prime number. Thank you. ");
+        else System.out.println("False, that was not a prime number. Thank you.");               
+    }
+    /* The function to check the random number for prime charachteristics  */
+    static boolean check(int random) {
+        for(int i = 2; i*i <= random; i++){
+        if((random % i) == 0) return false;
+        }
+        return true;
+    }
+}
